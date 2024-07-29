@@ -47,7 +47,7 @@ public class Tests extends BaseTest {
         checkOutPage.clickOnPlaceOrderButton();
         Thread.sleep(10000);
         orderReceived = new OrderReceived(driver);
-        orderReceived.verifyThatOrderIsReceivedSuccessfully("Thank you. Your order has been received.", "Order is not received!");
+        orderReceived.verifyThatOrderIsReceivedSuccessfully("Thank you. Your order has been received.", "Order is not received.");
     }
-    
+
 }
