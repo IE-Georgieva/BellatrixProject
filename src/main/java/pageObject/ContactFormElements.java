@@ -8,7 +8,7 @@ public class ContactFormElements extends PageObject {
         super(searchContext);
     }
 
-    private WebElement firstName = SearchContext.findElement(By.cssSelector("#wpforms-3347-field_1"));
+    private WebElement firstName = SearchContext.findElement(By.id("#wpforms-3347-field_1"));
     private WebElement lastName = SearchContext.findElement(By.cssSelector("#wpforms-3347-field_1-last"));
     private WebElement email = SearchContext.findElement(By.cssSelector("#wpforms-3347-field_2"));
     private WebElement bronzeAccessPass = SearchContext.findElement(By.cssSelector("#wpforms-3347-field_3_1"));

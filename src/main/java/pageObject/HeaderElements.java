@@ -16,7 +16,6 @@ public class HeaderElements extends PageObject {
     public void clickOnMenu() {
         SearchContext.click();
     }
-
 }
 
 

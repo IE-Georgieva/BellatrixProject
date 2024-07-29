@@ -16,7 +16,6 @@ public class InStockProduct extends PageObject {
     public String getTitle() {
         return titleElement.getText();
     }
-
     public void clickOnButton() {
         buttonElement.click();
 
