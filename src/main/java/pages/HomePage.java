@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage extends CommonPage {
-
     private List<WebElement> productsElements = webDriver.findElements(By.cssSelector(".product.type-product"));
 
     public HomePage(WebDriver driver) {
@@ -18,27 +17,22 @@ public class HomePage extends CommonPage {
 
     public List<InStockProduct> getAllProducts() {
         List<InStockProduct> resultProducts = new ArrayList<>();
-
         for (WebElement productElement : productsElements) {
             InStockProduct tempProduct = new InStockProduct(productElement);
             resultProducts.add(tempProduct);
         }
-
         return resultProducts;
     }
 
     public InStockProduct getProductByName(String productName) {
         InStockProduct resultProduct = null;
         List<InStockProduct> allProducts = getAllProducts();
-
         for (InStockProduct product : allProducts) {
             if (product.getTitle().equals(productName)) {
                 resultProduct = product;
                 break;
             }
         }
-
         return resultProduct;
-
     }
 }

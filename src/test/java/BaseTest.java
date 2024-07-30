@@ -9,8 +9,8 @@ public class BaseTest {
     protected HomePage homepage;
     protected Cart cart;
     protected CheckOutPage checkOutPage;
-    protected OrderReceived orderReceived;
-    protected ReadMore readMore;
+    protected OrderReceivedPage orderReceivedPage;
+    protected ReadMorePage readMorePage;
 
     @BeforeTest
     public void setDriver() {

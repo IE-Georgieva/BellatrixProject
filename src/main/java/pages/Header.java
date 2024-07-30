@@ -11,8 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Header extends PageObject {
-
-    private List<WebElement> allMenus = SearchContext.findElements(By.cssSelector("ul.nav-menu li"));
+    private List<WebElement> navigationMenuButtons = SearchContext.findElements(By.cssSelector("ul.nav-menu li"));
 
     public Header(WebElement SearchContext) {
         super(SearchContext);
@@ -20,8 +19,7 @@ public class Header extends PageObject {
 
     public List<HeaderElements> getAllMenus() {
         List<HeaderElements> resultMenu = new ArrayList<>();
-
-        for (WebElement menuElement : allMenus) {
+        for (WebElement menuElement : navigationMenuButtons) {
             HeaderElements tempMenu = new HeaderElements(menuElement);
             resultMenu.add(tempMenu);
         }
@@ -31,17 +29,12 @@ public class Header extends PageObject {
     public HeaderElements getMenuByName(String menuName) {
         HeaderElements resultMenu = null;
         List<HeaderElements> allMenus = getAllMenus();
-
         for (HeaderElements menu : allMenus) {
-
             if (menu.getMenuTitle().equals(menuName)) {
                 resultMenu = menu;
                 break;
             }
         }
-
         return resultMenu;
     }
-
-
 }

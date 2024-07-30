@@ -1,8 +1,8 @@
 package pageObject;
 
-
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
 
 public class HeaderElements extends PageObject {
     public HeaderElements(WebElement searchContext) {
