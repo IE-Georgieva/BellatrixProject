@@ -15,6 +15,7 @@ public class BaseTest {
     @BeforeTest
     public void setDriver() {
         driver = new ChromeDriver();
+        System.out.println("Driver is initialized");
         driver.manage().window().maximize();
         driver.get("https://demos.bellatrix.solutions/");
         homepage = new HomePage(driver);
