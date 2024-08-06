@@ -8,5 +8,4 @@ public abstract class PageObject {
     public PageObject(WebElement searchContext) {
         SearchContext = searchContext;
     }
-
 }
