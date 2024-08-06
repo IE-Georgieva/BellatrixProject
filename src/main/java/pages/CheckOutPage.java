@@ -10,13 +10,13 @@ import java.time.Duration;
 public class CheckOutPage extends CommonPage {
 
 
-    private WebElement firstName = webDriver.findElement(By.cssSelector("#billing_first_name"));
-    private WebElement lastName = webDriver.findElement(By.cssSelector("#billing_last_name"));
-    private WebElement streetAddress = webDriver.findElement(By.cssSelector("#billing_address_1"));
-    private WebElement city = webDriver.findElement(By.cssSelector("#billing_city"));
-    private WebElement postcode = webDriver.findElement(By.cssSelector("#billing_postcode"));
-    private WebElement phone = webDriver.findElement(By.cssSelector("#billing_phone"));
-    private WebElement email = webDriver.findElement(By.cssSelector("#billing_email"));
+    private WebElement firstName = webDriver.findElement(By.cssSelector("input[id=billing_first_name]"));
+    private WebElement lastName = webDriver.findElement(By.cssSelector("input[id=billing_last_name]"));
+    private WebElement streetAddress = webDriver.findElement(By.cssSelector("input[id=billing_address_1]"));
+    private WebElement city = webDriver.findElement(By.cssSelector("input[id=billing_city]"));
+    private WebElement postcode = webDriver.findElement(By.cssSelector("input[id=billing_postcode]"));
+    private WebElement phone = webDriver.findElement(By.cssSelector("input[id=billing_phone]"));
+    private WebElement email = webDriver.findElement(By.cssSelector("input[id=billing_email]"));
 
     public CheckOutPage(WebDriver driver) {
         super(driver);
