@@ -32,6 +32,6 @@ public class Tests extends BaseTest {
         checkOutPage.fillCheckoutPage("TestFirstName", "TestLastName", "Mladost 1, 5451 A", "Sofia", "1000", "02365154210", "testEmail@abv.bg");
         checkOutPage.clickOnPlaceOrderButton();
         orderReceivedPage = new OrderReceivedPage(driver);
-        orderReceivedPage.verifyThatOrderIsReceivedSuccessfully("Thank you. Your order has been received.", "Order is not received!!!");
+        orderReceivedPage.verifyThatOrderIsReceivedSuccessfully("Thank you. Your order has been received.", "Order is not received!!!!!");
     }
 }
