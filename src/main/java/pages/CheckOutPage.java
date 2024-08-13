@@ -8,8 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CheckOutPage extends CommonPage {
-    private static CheckOutPage obj;
-
 
     private WebElement firstName = webDriver.findElement(By.cssSelector("#billing_first_name"));
     private WebElement lastName = webDriver.findElement(By.cssSelector("#billing_last_name"));
@@ -23,7 +21,6 @@ public class CheckOutPage extends CommonPage {
         super(driver);
         loadingIndicator();
     }
-
 
     public void fillCheckoutPage(String first, String last, String address, String town, String zip, String phoneNumber, String emailAddress) {
         WebDriverWait webDriverWait;

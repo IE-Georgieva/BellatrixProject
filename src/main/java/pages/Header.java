@@ -14,7 +14,6 @@ public class Header extends PageObject {
     private List<WebElement> navigationMenuButtons = SearchContext.findElements(By.cssSelector("ul.nav-menu li"));
     private List<HeaderElement> headerElements;
 
-
     public Header(WebElement SearchContext) {
         super(SearchContext);
     }

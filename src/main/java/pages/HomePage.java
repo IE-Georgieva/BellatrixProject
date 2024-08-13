@@ -32,17 +32,6 @@ public class HomePage extends CommonPage {
         productElements = resultProducts;
     }
 
-
-
-//    public List<InStockProduct> getAllProducts() {
-//        List<InStockProduct> resultProducts = new ArrayList<>();
-//        for (WebElement productElement : productsElements) {
-//            InStockProduct tempProduct = new InStockProduct(productElement);
-//            resultProducts.add(tempProduct);
-//        }
-//        return resultProducts;
-//    }
-
     public InStockProduct getProductByName(String productName) {
         InStockProduct resultProduct = null;
         List<InStockProduct> allProducts = getAllProducts();
