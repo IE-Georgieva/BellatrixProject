@@ -17,6 +17,7 @@ public class CommonPage extends BasePage {
 
     public Header getHeader() {
         return new Header(header);
+
     }
 
     protected WebDriverWait webDriverWait;
@@ -25,7 +26,5 @@ public class CommonPage extends BasePage {
         webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(15));
     }
 
-    public void performImplicitWait() {
-        performImplicitWait();
-    }
+
 }

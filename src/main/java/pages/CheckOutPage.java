@@ -8,10 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CheckOutPage extends CommonPage {
+    private static CheckOutPage obj;
 
 
-    private WebElement firstName = webDriver.findElement(By.cssSelector("input[id=billing_first_name]"));
-    private WebElement lastName = webDriver.findElement(By.cssSelector("input[id=billing_last_name]"));
+    private WebElement firstName = webDriver.findElement(By.cssSelector("#billing_first_name"));
+    private WebElement lastName = webDriver.findElement(By.cssSelector("#billing_last_name"));
     private WebElement streetAddress = webDriver.findElement(By.cssSelector("input[id=billing_address_1]"));
     private WebElement city = webDriver.findElement(By.cssSelector("input[id=billing_city]"));
     private WebElement postcode = webDriver.findElement(By.cssSelector("input[id=billing_postcode]"));
@@ -20,7 +21,9 @@ public class CheckOutPage extends CommonPage {
 
     public CheckOutPage(WebDriver driver) {
         super(driver);
+        loadingIndicator();
     }
+
 
     public void fillCheckoutPage(String first, String last, String address, String town, String zip, String phoneNumber, String emailAddress) {
         WebDriverWait webDriverWait;
@@ -40,7 +43,7 @@ public class CheckOutPage extends CommonPage {
         Actions actions = new Actions(webDriver);
         var element = webDriver.findElement(By.cssSelector("div.form-row"));
         actions.moveToElement(element).moveByOffset(0, -25).click().perform();
-        performImplicitWait();
+        performWait();
     }
 
     public void loadingIndicator() {

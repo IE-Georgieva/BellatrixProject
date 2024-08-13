@@ -1,7 +1,6 @@
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.*;
-
-import java.util.concurrent.TimeUnit;
 
 public class Tests extends BaseTest {
 
@@ -29,9 +28,9 @@ public class Tests extends BaseTest {
         cart = new Cart(driver);
         cart.clickOnProceedToCheckoutButton();
         checkOutPage = new CheckOutPage(driver);
-        checkOutPage.fillCheckoutPage("TestFirstName", "TestLastName", "Mladost 1, 5451 A", "Sofia", "1000", "02365154210", "testEmail@abv.bg");
+        checkOutPage.fillCheckoutPage("TestFirstName", "TestLastName", "Mladost 1", "Sofia", "1000", "02365154210", "testEmail@abv.bg");
         checkOutPage.clickOnPlaceOrderButton();
         orderReceivedPage = new OrderReceivedPage(driver);
-        orderReceivedPage.verifyThatOrderIsReceivedSuccessfully("Thank you. Your order has been received.", "Order is not received!!!!!");
+        orderReceivedPage.verifyThatOrderIsReceivedSuccessfully("Thank you. Your order has been received.", "Order is not received!");
     }
 }
