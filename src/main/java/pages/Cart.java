@@ -29,5 +29,4 @@ public class Cart extends CommonPage {
     public void successfullyDeletedItem(){
         Assert.assertTrue(returnToShop.isDisplayed(), "Product is not deleted from cart!");
     }
-
 }
