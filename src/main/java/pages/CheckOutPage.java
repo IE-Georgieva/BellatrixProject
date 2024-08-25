@@ -40,7 +40,6 @@ public class CheckOutPage extends CommonPage {
         Actions actions = new Actions(webDriver);
         var element = webDriver.findElement(By.cssSelector("div.form-row"));
         actions.moveToElement(element).moveByOffset(0, -25).click().perform();
-        performWait();
     }
 
     public void loadingIndicator() {

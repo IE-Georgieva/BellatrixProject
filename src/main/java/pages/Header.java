@@ -2,10 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import pageObject.HeaderElement;
 import pageObject.PageObject;
-
 
 import java.util.ArrayList;
 import java.util.List;

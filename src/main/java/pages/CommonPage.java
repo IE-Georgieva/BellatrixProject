@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class CommonPage extends BasePage {
     private WebElement header = webDriver.findElement(By.cssSelector("div.storefront-primary-navigation"));
@@ -21,10 +20,8 @@ public class CommonPage extends BasePage {
     }
 
     protected WebDriverWait webDriverWait;
-
     public void performWait() {
         webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(15));
+
     }
-
-
 }
