@@ -12,7 +12,7 @@ public class InStockProduct extends PageObject{
     private WebElement priceElement = SearchContext.findElement(By.cssSelector(".price"));
     private WebElement buttonElement = SearchContext.findElement(By.cssSelector(".product_type_simple"));
     private WebElement pictureElement = SearchContext.findElement(By.cssSelector(".attachment-woocommerce_thumbnail.size-woocommerce_thumbnail"));
-    private WebElement viewCartButton = SearchContext.findElement(By.cssSelector(".added_to_cart wc-forward"));
+
     public String getTitle() {
         return titleElement.getText();
     }
@@ -23,6 +23,7 @@ public class InStockProduct extends PageObject{
     }
 
     public void clickOnViewCartButton(){
+        WebElement viewCartButton = SearchContext.findElement(By.cssSelector(".added_to_cart.wc-forward"));
         viewCartButton.click();
     }
 }

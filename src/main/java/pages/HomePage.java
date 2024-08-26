@@ -5,14 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import pageObject.InStockProduct;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import static org.testng.AssertJUnit.assertEquals;
@@ -71,25 +68,21 @@ public class HomePage extends CommonPage {
     }
 
     public void successfullySortedElements() {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(15));
         List<WebElement> priceElements = webDriver.findElements(By.cssSelector("span.price:not(:has(>del)), span.price ins"));
         List<Double> prices = priceElements.stream()
-                .map(e -> {
-                    String priceText = e.getText().replace("€", "").trim();
-                    Pattern pattern = Pattern.compile("\\d+(\\.\\d+)?");
-                    Matcher matcher = pattern.matcher(priceText);
-                    if (matcher.find()) {
-                        return Double.parseDouble(matcher.group());
-                    } else {
-                        throw new NumberFormatException("Invalid price format: " + priceText);
-                    }
-                })
+                .map(WebElement::getText)
+                .map(text -> text.replaceAll("[^\\d.]", ""))
+                .map(Double::parseDouble)
                 .collect(Collectors.toList());
+        boolean isSorted = true;
         for (int i = 0; i < prices.size() - 1; i++) {
-            Assert.assertTrue(prices.get(i) >= prices.get(i + 1), "Prices are not sorted correctly.");
+            if (prices.get(i) < prices.get(i + 1)) {
+                isSorted = false;
+                break;
+            }
         }
-        Double highestPrice = prices.get(0);
-        System.out.println("Highest price: " + highestPrice);
+        assert isSorted : "Prices are not sorted correctly!";
+
     }
 }
 

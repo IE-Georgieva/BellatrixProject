@@ -8,7 +8,7 @@ import org.testng.Assert;
 public class Cart extends CommonPage {
     private WebElement proceedToCheckout = webDriver.findElement(By.cssSelector(".checkout-button.button.alt.wc-forward"));
     private WebElement deleteButton = webDriver.findElement(By.cssSelector(".remove"));
-    private WebElement returnToShop = webDriver.findElement(By.cssSelector(".cart-empty.woocommerce-info"));
+
 
     public Cart(WebDriver driver) {
         super(driver);
@@ -27,6 +27,7 @@ public class Cart extends CommonPage {
     }
 
     public void successfullyDeletedItem(){
+        WebElement returnToShop = webDriver.findElement(By.cssSelector(".cart-empty.woocommerce-info"));
         Assert.assertTrue(returnToShop.isDisplayed(), "Product is not deleted from cart!");
     }
 }
